@@ -11,10 +11,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-teal-200 p-1 md:p-5 m-0">
+  <body class="bg-teal-100 p-1 md:p-5 m-0">
     <header>
     </header>
     <main class="container mx-auto mt-5 md:px-5 flex flex-col justify-items-center items-center">
+      <div>
+        <%= notice %>
+        <%= alert %>
+      </div>
       <%= yield %>
     </main>
   </body>

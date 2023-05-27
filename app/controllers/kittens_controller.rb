@@ -25,7 +25,7 @@ class KittensController < ApplicationController
 
     respond_to do |format|
       if @kitten.save
-        format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully created." }
+        format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully created :)" }
         format.json { render :show, status: :created, location: @kitten }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class KittensController < ApplicationController
     @kitten.destroy
 
     respond_to do |format|
-      format.html { redirect_to kittens_url, notice: "Kitten was successfully destroyed." }
+      format.html { redirect_to kittens_url, notice: "Kitten was destroyed :(" }
       format.json { head :no_content }
     end
   end

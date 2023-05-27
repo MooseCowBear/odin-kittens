@@ -16,22 +16,22 @@
   <div>
     <div class="py-2">
       <%= form.label :name, "Name:" %>
-      <%= form.text_field :name, { class: 'rounded-lg border-transparent focus:border-teal-500 border-2 focus:outline-none focus:ring-0' } %>
+      <%= form.text_field :name, { class: 'rounded-lg border-2 border-teal-300 focus:border-teal-500 border-2 focus:outline-none focus:ring-0' } %>
     </div>
 
     <div class="py-2">
       <%= form.label :age, "Age:" %>
-      <%= form.number_field :age, { in: 0..20, step: 1 , class: 'rounded-lg border-transparent focus:border-teal-500 border-2 focus:outline-none focus:ring-0' }%>
+      <%= form.number_field :age, { in: 0..20, step: 1 , class: 'rounded-lg  border-2 border-teal-300 focus:border-teal-500 border-2 focus:outline-none focus:ring-0' }%>
     </div>
 
     <div class="py-2">
       <%= form.label :cuteness, "Cuteness:" %>
-      <%= form.number_field :cuteness, { in: 1..10, step: 1, class: 'rounded-lg border-transparent focus:border-teal-500 border-2 focus:outline-none focus:ring-0' } %>
+      <%= form.number_field :cuteness, { in: 1..10, step: 1, class: 'rounded-lg border-2 border-teal-300 focus:border-teal-500 border-2 focus:outline-none focus:ring-0' } %>
     </div>
 
     <div class="py-2">
       <%= form.label :softness, "Softness:" %>
-      <%= form.number_field :softness,{ in: 1..10, step: 1, class: 'rounded-lg border-transparent focus:border-teal-500 border-2 focus:outline-none focus:ring-0' } %>
+      <%= form.number_field :softness,{ in: 1..10, step: 1, class: 'rounded-lg border-2 border-teal-300 focus:border-teal-500 border-2 focus:outline-none focus:ring-0' } %>
     </div>
 
     <%= form.submit({ class: 'cursor-pointer rounded-md border-2 border-black p-2' }) %>
