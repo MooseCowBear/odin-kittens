@@ -1,16 +1,15 @@
 <div class="flex flex-col">
-  <h1 class="text-4xl font-extrabold">Editing kitten</h1>
+  <h1 class="text-4xl font-extrabold my-2">Editing kitten</h1>
 
-  <%= render "form", kitten: @kitten %>
-
-  <div class="grid grid-cols-1 justify-items-start my-3">
+  <div class="bg-gray-50 bg-opacity-60 px-5 py-10 rounded-md flex flex-col gap-2 items-start">
+    <%= render "form", kitten: @kitten %>
     <%= link_to "Destroy", kitten_path(@kitten), { class: 'cursor-pointer rounded-md border-2 border-black p-2', data: {
       turbo_method: :delete,
       turbo_confirm: "Why would you want to destroy a kitten?!"
     } }%>
-    <div class="my-5 flex flex-col gap-2 items-start">
-      <%= link_to "Show this kitten", @kitten, { class: 'underline decoration-2' } %>
-      <%= link_to "Back to kittens", kittens_path, { class: 'underline decoration-2' } %>
-    </div>
+  </div>
+  <div class="my-5 flex flex-col gap-1">
+    <%= link_to "Show this kitten", @kitten, { class: 'underline decoration-2' } %>
+    <%= link_to "Back to kittens", kittens_path, { class: 'underline decoration-2' } %>
   </div>
 </div>

@@ -1,7 +1,9 @@
 <div class="flex flex-col">
-  <h1 class="text-4xl font-extrabold">New kitten</h1>
+  <h1 class="text-4xl font-extrabold my-2">New kitten</h1>
 
-  <%= render "form", kitten: @kitten %>
+  <div class="bg-gray-50 bg-opacity-60 px-5 py-10 rounded-md flex flex-col gap-2 items-start">
+    <%= render "form", kitten: @kitten %>
+  </div>
 
   <br>
 
