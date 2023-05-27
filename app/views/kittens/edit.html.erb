@@ -5,7 +5,10 @@
 <br>
 
 <div>
-  <%= button_to "Destroy this kitten", @kitten, method: :delete %>
   <%= link_to "Show this kitten", @kitten %> |
   <%= link_to "Back to kittens", kittens_path %>
+  <%= link_to "Destroy", kitten_path(@kitten), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you some kind of monster?!"
+        } %>
 </div>

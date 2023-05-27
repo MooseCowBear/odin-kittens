@@ -6,5 +6,8 @@
   <%= link_to "Edit this kitten", edit_kitten_path(@kitten) %> |
   <%= link_to "Back to kittens", kittens_path %>
 
-  <%= button_to "Destroy this kitten", @kitten, method: :delete %>
+  <%= link_to "Destroy", kitten_path(@kitten), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Why would you want to destroy a kitten?!"
+        } %>
 </div>

@@ -13,7 +13,10 @@
       <tr>
         <td><%= kitten.name %></td>
         <td><%= link_to "Show this kitten", kitten %></td>
-        <td><%= button_to "Destroy this kitten", kitten, method: :delete %></td>
+        <td><%= link_to "Destroy", kitten_path(kitten), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure? This kitten will be lost forever."
+        } %></td>
       </tr>
     <% end %>
   </table>
