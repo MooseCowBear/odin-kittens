@@ -1,9 +1,11 @@
-<h1>New kitten</h1>
+<div class="flex flex-col">
+  <h1 class="text-4xl font-extrabold">New kitten</h1>
 
-<%= render "form", kitten: @kitten %>
+  <%= render "form", kitten: @kitten %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to kittens", kittens_path %>
+  <div>
+    <%= link_to "Back to kittens", kittens_path, { class: 'underline decoration-2' } %>
+  </div>
 </div>

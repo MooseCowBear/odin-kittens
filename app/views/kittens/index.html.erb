@@ -1,25 +1,35 @@
-<p style="color: green"><%= notice %></p>
+<div class="grid grid-cols-1 lg:grid-cols-3">
+  <div class="col-start-1 my-2">
+    <p style="color: green"><%= notice %></p>
+    <h1 class="text-4xl font-extrabold">Kittens</h1>
+    <%= link_to "Add a New kitten", new_kitten_path, { class: 'underline decoration-2 justify-self-center py-2' } %>
+  </div>
 
-<h1>Kittens</h1>
-
-<div id="kittens" class="table__wrapper">
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Details</th> 
-      <th>Delete</th>
-    </tr>
-    <% @kittens.each do |kitten| %>
-      <tr>
-        <td><%= kitten.name %></td>
-        <td><%= link_to "Show this kitten", kitten %></td>
-        <td><%= link_to "Destroy", kitten_path(kitten), data: {
-          turbo_method: :delete,
-          turbo_confirm: "Are you sure? This kitten will be lost forever."
-        } %></td>
-      </tr>
-    <% end %>
-  </table>
+  <div id="kittens" class="grid lg:col-span-2">
+    <table class="w-full text-sm text-left text-gray-500 table-fixed">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b">
+        <tr>
+          <th class="py-3 px-5">Kitten</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @kittens.each_with_index do |kitten, i| %>
+          <tr class="bg-white border-b">
+            <td class="py-3 px-2 md:px-5"><%= kitten.name %></td>
+            <div>
+              <td class=""><%= link_to "Details", kitten, { class: 'underline decoration-2' } %></td>
+              <td><%= link_to "Edit", edit_kitten_path(kitten), { class: 'underline decoration-2' } %></td>
+              <td class=""><%= link_to "Destroy", kitten_path(kitten), { class: 'underline decoration-2', data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure? This kitten will be lost forever."
+              } }%></td>
+            </div>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<%= link_to "New kitten", new_kitten_path %>

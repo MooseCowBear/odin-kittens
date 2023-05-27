@@ -1,13 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<div class="grid grid-cols-1 justify-center bg-gray-50 bg-opacity-60 p-10 rounded-md">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @kitten %>
+  <%= render @kitten %>
 
-<div>
-  <%= link_to "Edit this kitten", edit_kitten_path(@kitten) %> |
-  <%= link_to "Back to kittens", kittens_path %>
+  <div class="grid grid-cols-1">
 
-  <%= link_to "Destroy", kitten_path(@kitten), data: {
-          turbo_method: :delete,
-          turbo_confirm: "Why would you want to destroy a kitten?!"
-        } %>
+    <div class="my-5 flex flex-col gap-2 items-start">
+      <%= link_to "Edit this kitten", edit_kitten_path(@kitten), { class: 'cursor-pointer rounded-md border-2 border-black p-2' } %> 
+
+      <%= link_to "Destroy", kitten_path(@kitten), { class: 'cursor-pointer rounded-md border-2 border-black p-2', data: {
+              turbo_method: :delete,
+              turbo_confirm: "Why would you want to destroy a kitten?!"
+            } }%>
+    </div>
+    <%= link_to "Back to kittens", kittens_path, { class: 'underline decoration-2' } %>
+  </div>
 </div>
