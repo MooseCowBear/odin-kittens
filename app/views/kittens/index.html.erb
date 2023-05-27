@@ -2,13 +2,21 @@
 
 <h1>Kittens</h1>
 
-<div id="kittens">
-  <% @kittens.each do |kitten| %>
-    <%= render kitten %>
-    <p>
-      <%= link_to "Show this kitten", kitten %>
-    </p>
-  <% end %>
+<div id="kittens" class="table__wrapper">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Details</th> 
+      <th>Delete</th>
+    </tr>
+    <% @kittens.each do |kitten| %>
+      <tr>
+        <td><%= kitten.name %></td>
+        <td><%= link_to "Show this kitten", kitten %></td>
+        <td><%= button_to "Destroy this kitten", kitten, method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
 <%= link_to "New kitten", new_kitten_path %>

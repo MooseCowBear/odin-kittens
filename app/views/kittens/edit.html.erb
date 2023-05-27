@@ -5,6 +5,7 @@
 <br>
 
 <div>
+  <%= button_to "Destroy this kitten", @kitten, method: :delete %>
   <%= link_to "Show this kitten", @kitten %> |
   <%= link_to "Back to kittens", kittens_path %>
 </div>
