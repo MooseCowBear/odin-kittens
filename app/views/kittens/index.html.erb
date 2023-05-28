@@ -1,11 +1,10 @@
 <div class="grid grid-cols-1 lg:grid-cols-4">
   <div class="col-start-1 my-2">
-    <p style="color: green"><%= notice %></p>
     <h1 class="text-4xl font-extrabold">Kittens</h1>
     <%= link_to "Add a New kitten", new_kitten_path, { class: 'underline decoration-2 justify-self-center py-2' } %>
   </div>
 
-  <div id="kittens" class="grid md:grid-cols-4 md:col-span-3 gap-4">
+  <div id="kittens" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:col-span-3 gap-4">
     <% @kittens.each do |kitten| %>
       <div class="rounded-md shadow-md bg-zinc-50 p-5 bg-opacity-80 flex flex-col justify-between gap-2">
         <div class="border-b-4 font-semibold text-lg"><%= kitten.name %></div>
